@@ -22,7 +22,6 @@ const Home = () => {
 
     return (
         <ScrollView style={styles.container}>
-            <Button title="Get Started" onPress={() => router.push('/home')} />
             {blogs.map(blog => (
                 <BlogComponent key={blog.id} blog={blog} />
             ))}

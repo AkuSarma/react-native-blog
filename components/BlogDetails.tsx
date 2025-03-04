@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 interface BlogDetailsProps {
     title: string;
@@ -9,12 +10,37 @@ interface BlogDetailsProps {
 
 const BlogDetails: React.FC<BlogDetailsProps> = ({ title, author, content, date }) => {
     return (
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'Arial, sans-serif' }}>
-            <h1 style={{ borderBottom: '2px solid #ddd', paddingBottom: '10px' }}>{title}</h1>
-            <p style={{ color: '#555', fontStyle: 'italic' }}>By {author} on {date}</p>
-            <div style={{ marginTop: '20px', lineHeight: '1.6' }}>{content}</div>
-        </div>
+        <View style={styles.container}>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.author}>By {author} on {date}</Text>
+            <Text style={styles.content}>{content}</Text>
+        </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 20,
+        maxWidth: 800,
+        marginHorizontal: 'auto',
+        fontFamily: 'Arial, sans-serif',
+    },
+    title: {
+        borderBottomWidth: 2,
+        borderBottomColor: '#ddd',
+        paddingBottom: 10,
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    author: {
+        color: '#555',
+        fontStyle: 'italic',
+        marginVertical: 10,
+    },
+    content: {
+        marginTop: 20,
+        lineHeight: 1.6,
+    },
+});
 
 export default BlogDetails;

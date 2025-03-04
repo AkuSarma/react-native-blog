@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { router } from 'expo-router';
 
@@ -17,7 +17,7 @@ const BlogComponent: React.FC<BlogComponentProps> = ({ blog }) => {
     const navigation = useNavigation();
 
     const handlePress = () => {
-        router.push('/blogDetails');
+        router.push("/BlogDetailsPage");
     };
 
     return (
