@@ -23,7 +23,7 @@ export default function App() {
   return (
     <View>
       <Auth />
-      {session && session.user && <Text>{session.user.id}</Text>}
+      {session && session.user && <Text>{session.user.email}</Text>}
 
       <Text>Welcome to the Blog App</Text>
       <Button title="Get Started" onPress={() => router.push("/home")} />
